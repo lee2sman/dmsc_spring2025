@@ -6,7 +6,7 @@ title: About
 
 ## About Drawing, Moving and Seeing with Code
 
-Drawing, Moving and Seeing with Code is a studio course in New Media at Purchase College, State University of New York.
+Drawing, Moving and Seeing with Code is a New Media course at Purchase College, State University of New York.
 
 An intermediate lecture/studio course that explores techniques for creating dynamic, poetic, and lifelike animations in code. Students learn techniques to program movement and the simulation of natural systems and behaviors, and develop works that respond to various inputs. Projects are developed using open-source software environments like Processing and p5.js.
 
