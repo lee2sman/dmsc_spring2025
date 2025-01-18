@@ -31,5 +31,33 @@ Today
 ]]>
 </description>
 </item>
+<item>
+<title>
+Week 2 - p5.js Overview and A Random Walk
+</title>
+<link>
+https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.md
+</link>
+<guid>
+https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.md
+</guid>
+<pubDate>
+Fri, 17 Jan 2025 00:00:00 -0500
+</pubDate>
+<description>
+<![CDATA[
+[An iceberg’s meandering path] Image uploaded to Are.na by Jon-Kyle Mohr
+
+Today
+
+-   Randomness
+-   p5.js overview
+-   Iceberg activities
+-   HW: Devlog 2
+
+Javascript!
+]]>
+</description>
+</item>
 </channel>
   </rss>
