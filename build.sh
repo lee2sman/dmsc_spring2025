@@ -60,8 +60,9 @@ function create_site {
   mkdir -p "$site_folder/css"
   cp -r themes/* "$site_folder/css/"
 
-  # copy over p5.js sketch
-  cp sketch.js "$site_folder/sketch.js"
+  # copy over p5.js sketches
+  mkdir -p "$site_folder/js"
+  cp -r js/* "$site_folder/js/"
 
   # copy over assets
   mkdir -p "$site_dir/$site_assets"
