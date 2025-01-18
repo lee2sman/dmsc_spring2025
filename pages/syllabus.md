@@ -159,6 +159,92 @@ None of these (except perhaps an external hard drive or paper) cost any money, t
 * A notebook. Please have a notebook and pen or pencil ready for class. Use it to jot down notes, respond to prompts, and for in-class sketching.
 * A way to store/backup your files. Losing your work is not okay! Backup online and to external drives.
 
+## Schedule
+
+### Week 1: Turtle Geometry
+
+* Warmup: Draw jams
+* Intro to LOGO 
+* Turtle Geometry
+* Driving a turtle
+* Workshop: Generate a quilt
+* Development Logs (Devlog)
+
+### Week 2: An iceberg's meandering path
+
+* Random Walk
+* Perlin Noise
+* Workshop: Simulate an iceberg's path
+
+### Week 3: Automatons and Self-Drawing Machines
+
+- warmup: loops
+- Harold Cohen and AARON
+- Automatons
+- p5.js - arrays and classes
+
+### Week 4: Noise and Randomness
+
+- random walkers
+- warmup: multiple classes and objects
+- other forms of randomness
+
+### Week 5: The Game of Life and Seeing
+
+- guest artist Jonah Senzel
+- workshop on random seeding
+- "fake multiplayer"
+
+### Week 6: A-life and Cellular Automata
+
+- a-life
+- the game of life
+- emergence
+
+### Week 7: Fluxus
+
+* fluxus
+* algorithmic art
+* more TBD
+
+### Week 8: Algoraves - Live coding 
+
+* live coding
+* Hydra
+* p5live
+
+### week 9: Algoraves continued
+
+* procedural sound
+* Brian Eno
+* Generative.fm
+* TidalCycles
+* ORCA
+
+### Week 11: Squirrel Eat Squirrel
+
+* swarming
+* flocking, boids
+
+### Week 12: Procedural Generation
+
+* generating a dungeon
+* room generation
+* Wave Function Collapse
+
+### Week 13: Pathfinding
+
+* A-Star
+* Dijkstra's Algorithm
+
+### Week 14: ML Language Models and Transformers
+
+* ML in theory and practice
+
+### Week 15: Final projects
+
+* Presentations and exhibition
+
 ## p5.js Resources  
 
 The primary language (library) we use in the course is p5.js.
