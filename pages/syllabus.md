@@ -2,6 +2,8 @@
 title: Syllabus
 ---
 
+## Drawing, Moving and Seeing with Code
+
 ![A-life bug mascot](bug_small.png)
 
 Instructor: Lee Tusman  
