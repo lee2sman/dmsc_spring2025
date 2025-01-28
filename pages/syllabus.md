@@ -139,6 +139,8 @@ If needed, this syllabus and the course outline may be revised to better suit th
 
 ## Grades
 
+**Note: I have introduced self-grading to most of my courses. When you turn in an assignment, I will ask you to evaluate your own work and to assign a grade. This is optional: if you don't turn it in, I will assign a grade 'traditionally.' I will do 1-on-1 check-ins with you mid-semester and at the end of the semester to review your progress and grade.**
+
 * 40% weekly class assignments. This will be based on your weekly logs about your projects. (weeks 1-10)  
 * 20% ecosystem project (mid-semester)
 * 20% Final Assignment (weeks 11-14)  
