@@ -1,3 +1,6 @@
+[Week 3 - Automatons and Self-Drawing Machines](objects/)  
+2025-02-11  
+
 [Week 2 - p5.js Overview and A Random Walk](iceberg-walk/)  
 2025-02-04  
 

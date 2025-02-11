@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="date" content="" />
+            <title>Week 3 - Automatons and Self-Drawing Machines</title>
+      <link rel="stylesheet" href="../css/../css/dmsc.css" />
+
+      <meta property="og:title" content="Week 3 - Automatons and
+Self-Drawing Machines" />
+                  <meta property="og:type" content="article" />
+  </head>
+  <body>
+      <header> <nav>
+  <ul>
+    <li><a href="https://leetusman.com/dmsc_spring2025/">home</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/about/">about</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/logs/">logs</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/syllabus/">syllabus</a></li>
+  </ul>
+</nav> </footer>
+      <h1>Week 3 - Automatons and Self-Drawing Machines</h1>
+            <p><em>Date: 2025-02-11</em></p>
+            <h2 id="today">Today</h2>
+            <ul>
+            <li>warmup</li>
+            <li>Harold Cohen and AARON</li>
+            <li>Automatons</li>
+            <li>p5.js - arrays and classes</li>
+            </ul>
+            <h2 id="harold-cohen-and-aaron">Harold Cohen and AARON</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IPczQgCuOOc?si=EWrFXT77qlQRhptA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p>Harold Cohen - The Age of Intelligent Machines - 1987
+            (Clip)</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/MwHQx9BrHQc?si=lSYUTK2Cn--zVP-5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p>Harold Cohen - Collaborations with my Other Self - 2011
+            (Interview)</p>
+            <h2 id="automatons">Automatons</h2>
+            <p><img src="../images/automaton.jpg"
+            alt="Maillardet’s Automaton" /><br />
+            <em><a
+            href="https://www.fi.edu/history-resources/automaton">From
+            The Franklin Institute</a></em></p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7ZiH7oF3OMM?si=KrKFDQ7IkF8Vqt8i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p>The Draughtsman-Writer, circa 1800</p>
+            <h2 id="objects-and-arrays-of-objects">Objects and Arrays of
+            Objects</h2>
+            <h3 id="what-is-a-class">What is a class?</h3>
+            <p>In a programming language, a <em>class</em> is a defined
+            code template that is used to create objects. Objects can
+            have default <em>instance variables</em> and methods
+            (functions). We say that classes <em>encapsulate</em>
+            objects.</p>
+            <ul>
+            <li>They store functions and variables together</li>
+            <li>A class is a template - a <em>cookie-cutter</em></li>
+            <li>They are used to <em>stamp out</em> individual
+            Objects</li>
+            <li>When we stamp out or create an object using the
+            Class/cookie cutter we are said to be <em>instantiating</em>
+            an object. Each object is an <em>instance</em> of the
+            class.</li>
+            </ul>
+            <p>Here is an entire example that shows how to declare and
+            instantiate an object in your program.</p>
+            <p><strong>Note: This does not include the Bubble class
+            code.</strong></p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> bubbles <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> totalBubbles <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createCanvas</span>(<span class="dv">480</span><span class="op">,</span> <span class="dv">270</span>)<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stroke</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">255</span>)<span class="op">;</span>  </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>totalBubbles<span class="op">;</span> i<span class="op">++</span>){ <span class="co">//fill our array with 10 new Bubble objects</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      bubbles[i]<span class="op">=</span> <span class="kw">new</span> <span class="fu">Bubble</span>(<span class="fu">random</span>(width)<span class="op">,</span><span class="fu">random</span>(height))<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">background</span>(<span class="dv">255</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>bubbles<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>){</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="co">//call each object&#39;s display method </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      bubbles[i]<span class="op">.</span><span class="fu">display</span>()<span class="op">;</span> </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      <span class="co">// call each object&#39;s move method </span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      bubbles[i]<span class="op">.</span><span class="fu">move</span>()<span class="op">;</span> </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <h2 id="writing-a-class">Writing a class</h2>
+            <ul>
+            <li>A metaphor example: I have a class <em>People</em> that
+            contains the instance variables <em>name</em> and
+            <em>age</em>. My first object’s name variable is “Billy”,
+            age variable’s value is 23. My second object has the name
+            variable “Sally” and the age variable’s value is 25. They
+            both have name variables. They both have age variables. But
+            each has their own name and age.</li>
+            <li><h3 id="the-constructor">The Constructor</h3></li>
+            </ul>
+            <p>This is at the top of a class. It’s kind of like an
+            object’s <em>setup</em>. It runs once when you create an
+            object, and assigns the instance variables to the
+            object.</p>
+            <p>Because each object will have their own variables, we use
+            <code>this</code> before the variable name when they will
+            each have their own value.</p>
+            <p>For example:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Ball {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(){</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="fu">random</span>(width)<span class="op">;</span> <span class="co">//pick random x location</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">y</span> <span class="op">=</span> <span class="fu">random</span>(height)<span class="op">;</span> <span class="co">//pick random y location</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">//our class continues......</span></span></code></pre></div>
+            <p>So far we have a constructor that will assign variables
+            when we create an object. Now let’s make special functions
+            (which we call <em>methods</em>) that each object will have.
+            You do not put the word <em>function</em> before your
+            method’s name. It’s understood.</p>
+            <pre><code>//continues after the constructor from above
+
+display(){
+  ellipse(this.x,this.y,20,20);
+}</code></pre>
+            <p>So now we have created a display() function. Every object
+            created from the Ball class will have a random x and a
+            random y. To see the ball on the screen, we’ll have to run
+            <code>.display();</code> for each object.</p>
+            <h3 id="mini-example-of-a-simple-class-with-one-object">Mini
+            example of a simple class with one object</h3>
+            <p>Here is an example of the code all-together.</p>
+            <pre><code>let myBall;
+
+function setup(){
+  createCanvas(400,400);
+  myBall = new Ball(); 
+  
+  myBall.display();
+}
+
+class Ball {
+  constructor(){
+    this.x = random(width); //pick random x location
+    this.y = random(height); //pick random y location
+  }
+  
+  display(){
+    ellipse(this.x,this.y,20,20);
+  }
+}</code></pre>
+            <h3 id="what-if-we-want-multiple-balls">What if we want
+            multiple balls?</h3>
+            <p>We can leave the class alone, but add more global
+            variables (one for each ball).</p>
+            <pre><code>let myBall;
+let yourBall;
+
+function setup(){
+  createCanvas(400,400);
+  myBall = new Ball(); 
+  yourBall = new Ball(); 
+  
+  myBall.show();
+  yourBall.show();</code></pre>
+            <h2
+            id="an-example-class-that-takes-input-when-it-gets-created">An
+            Example Class that takes input when it gets created</h2>
+            <h3 id="default-arguments">Default arguments</h3>
+            <p>Maybe you don’t want each of your objects to be located
+            at a random x and y position when they are created. Perhaps
+            you want to specify each object’s exact position. Or its
+            color. You can pass in values when you create an object.
+            This is optional.</p>
+            <ul>
+            <li>Default arguments are optional.</li>
+            <li>You can include default values for the variables
+            connected to each object</li>
+            <li>You can specify in the constructor like this:
+            <code>constructor(x = 100, y = 300){  }</code></li>
+            </ul>
+            <p><a
+            href="https://editor.p5js.org/2sman/sketches/SJ5DGeIOQ">Example
+            Code here</a></p>
+            <pre><code>let wolfgang, clara;
+
+class Person {
+    constructor(_name,_x,_y) {
+        this.name = _name; //takes the passed name and sets the local name variable
+        this.x = _x //takes the passed x value
+        this.y = _y //takes the passed y
+        this.message = &quot;Hi &quot;+this.name;
+    }
+
+  drawName(){
+       text(this.message,this.x,this.y);
+   }
+}
+
+function setup(){
+  createCanvas(500,500);
+    wolfgang = new Person(&quot;Wolfgang&quot;,100,200);
+    clara = new Person(&quot;Clara&quot;,200,350);
+}
+
+function draw(){
+    wolfgang.drawName;
+    clara.drawName;
+}</code></pre>
+            <h3 id="lots-and-lots-of-objects---using-arrays">Lots and
+            lots of objects - using arrays</h3>
+            <p>If you want to make a ton of objects it’s too tedious to
+            come up with a variable name for each of them, and then to
+            write out all the code to make new objects and then to
+            declare their methods. Instead, we make an array, load it in
+            the setup with a loop, then use the methods of each object
+            in the draw (also in a loop).</p>
+            <p>Example:</p>
+            <pre><code>let myBubbles = []; //creates an empty array to hold all of my bubbles
+
+function setup(){
+  createCanvas(400,400);
+  
+  //this will loop through 10 times, create myBubbles[0] up to myBubbles[9].
+  for (let i = 0; i &lt; 10; i++){
+    myBubbles[i] = new Bubble(); 
+  }
+}
+
+function draw(){
+  //let&#39;s loop through again and display each of myBubbles
+  for (let i = 0; i &lt; 10; i++){
+    myBubbles[i].display();
+  }
+}
+
+class Bubble{
+
+  constructor(){
+    this.x = random(width);
+    this.y = random(height);
+  }
+  display(){
+    fill(0,0,190);  //blue
+    ellipse(this.x,this.y,20,20);
+  }
+}</code></pre>
+            <h2 id="resources">Resources</h2>
+            <ul>
+            <li>Examples of classes in objects can be found in The
+            Coding Train <a
+            href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">videos
+            5.4, 6.3, 6.4, 6.5.</a></li>
+            <li>Mozilla’s Classes <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">reference</a>
+            page</li>
+            <li>Classes <a
+            href="https://googlechrome.github.io/samples/classes-es6/">example</a>
+            by Google Chrome team.
+            <ul>
+            <li><a
+            href="https://github.com/GoogleChrome/samples">More</a>
+            Google Chrome ES6 examples</li>
+            </ul></li>
+            </ul>
+            <h1
+            id="homework---created-a-creature-class-and-an-object">Homework
+            - Created a Creature Class and an object</h1>
+            <p><strong>Part 1 is just to display your creature on the
+            screen. Do this before doing the reading.</strong></p>
+            <p><strong>Part 2 is to add a walking method to your class
+            so your creature can move around. Do this after doing the
+            reading and add to your creature’s class.</strong></p>
+            <h1 id="part-1">Part 1</h1>
+            <p>You will make a class for a creature like a snail or bear
+            or doodlebug. You can use primitive shapes (rects, ellipses,
+            etc) and/or images/photos that you preload. All images
+            should loaded in advance in preload() before your setup.</p>
+            <p>You can start by modifying our class code examples of
+            creating a Bubble or Ball class. Instead, yours will be
+            called Snail class or Doodlebug or whatever. Then you can
+            make a myBear or myDoodlebug object. Your class should have
+            a constructor and a display method, at minimum.</p>
+            <p>Your display() method for the class should have commands
+            like fill, ellipse, rect , etc that you will use to create
+            your little creature. Alternatively, use preload() before
+            setup and then draw the image to the screen in your display
+            method. In either case, pay attention to aesthetics! It
+            should look good.</p>
+            <h1 id="part-2-reading-and-then-add-to-your-code">Part 2:
+            Reading (and then add to your code)</h1>
+            <p>After creating your class in section 1 and an object, now
+            read from <a href="http://natureofcode.com/book">The Nature
+            of Code</a> (free, online).</p>
+            <p>Read through Introduction section 1 - 3 in the book
+            Nature of Code online, but remembering that we will be
+            writing our code in p5.js and not Processing. Instead of int
+            or float, use let. When you read the term ‘class’, think of
+            the p5.js way of writing objects with the constructor
+            function. Follow the random walker section and see if you
+            can work through exercise I.1, creating a random walker
+            class in p5js by adding in a step function to your object
+            code. Then try exercise I.2 and I.3. Note that the functions
+            such as random, noise are the same in both processing and
+            p5js. Create your own version of the random walker, and add
+            this code to your p5.js code for your assignment.</p>
+            <ul>
+            <li><a
+            href="https://natureofcode.com/book/introduction/">The
+            Nature of Code, Introduction</a></li>
+            <li>Optional: - <a
+            href="https://www.youtube.com/watch?list=PLRqwX-V7Uu6aFlwukCmDf0-1-uSR7mklK&amp;v=6vX8wT1G798&amp;feature=emb_logo">the
+            videos</a> are on Processing, but are still helpful</li>
+            <li>The book’s example code has been <a
+            href="https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js">ported
+            to p5js</a></li>
+            </ul>
+            <h3 id="devlog-post">Devlog post</h3>
+            <p>After creating your creature’s class and objects made
+            with that class, post a link to your code, and take some
+            screenshots.</p>
+            <p>Make a post describing what you created, any design (or
+            biological) inspirations, and what you think of the output
+            you got. What might you change, or what questions do you
+            have or things you’d want to learn to improve the
+            output?</p>
+      <footer> <hr>
+
+<p><em><a href="https://github.com/lee2sman/dmsc_spring2025">This site</a> is built using <a href="https://tildegit.org/exquisitecorp/panblog">panblog</a>. Site design by Lee Tusman (c) 2025.</em></p>
+
+<p><em>All course content, unless otherwise credited, is by Lee Tusman (c) 2025 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA</a>.</em></p> </footer>
+  </body>
+</html>
