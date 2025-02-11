@@ -7,7 +7,7 @@ title: Logs
 ## Student Devlogs
 
 * [Lex](https://itslexwhoelse.itch.io/drawing-moving-and-seeing-code)
-* Rafi
+* [Rafi](https://rafipdf.itch.io/drawing-moving-and-seeing-with-code)
 * [Mecca](https://meccagodzilla231.itch.io/awesomequiltprogram)
 * [Jack](https://flemin.itch.io/dmswc2025)
 * [Paul](https://ipodmadeofshiplap.itch.io/dsmc-spring-2025)
