@@ -6,7 +6,17 @@ title: Logs
 
 ## Student Devlogs
 
-A place to link to student devlogs (*[updated examples](https://itch.io/devlogs)*). 
+* [Lex](https://itslexwhoelse.itch.io/drawing-moving-and-seeing-code)
+* Rafi
+* MJ
+* [Jack](https://flemin.itch.io/dmswc2025)
+* [Paul](https://ipodmadeofshiplap.itch.io/dsmc-spring-2025)
+* [Diego](https://orangutanjuicebox.blogspot.com/)
+* [Jaiden](https://students.purchase.edu/jaiden.kelly/dms_blog/index.html)
+* April
+* [John](https://johnsch7.itch.io/devlog)
+* Grace
+* [Lee](https://leetusman.com/nosebook/log/)
 
 <sub>*Icon by [Imaginationlol](https://www.flaticon.com/free-icon/log_12888222?term=stacked+logs&page=1&position=3&origin=search&related_id=12888222).*</sub>
 
