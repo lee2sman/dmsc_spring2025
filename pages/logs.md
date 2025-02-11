@@ -8,7 +8,7 @@ title: Logs
 
 * [Lex](https://itslexwhoelse.itch.io/drawing-moving-and-seeing-code)
 * Rafi
-* MJ
+* [Mecca](https://meccagodzilla231.itch.io/awesomequiltprogram)
 * [Jack](https://flemin.itch.io/dmswc2025)
 * [Paul](https://ipodmadeofshiplap.itch.io/dsmc-spring-2025)
 * [Diego](https://orangutanjuicebox.blogspot.com/)
