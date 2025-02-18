@@ -13,7 +13,6 @@ title: Logs
 * [Paul](https://ipodmadeofshiplap.itch.io/dsmc-spring-2025)
 * [Diego](https://orangutanjuicebox.blogspot.com/)
 * [Jaiden](https://students.purchase.edu/jaiden.kelly/dms_blog/index.html)
-* April
 * [John](https://johnsch7.itch.io/devlog)
 * Grace
 * [Lee](https://leetusman.com/nosebook/log/)

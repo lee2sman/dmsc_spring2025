@@ -1,3 +1,6 @@
+[Week 4 - Random Seeding](seeding/)  
+2025-02-17  
+
 [Week 3 - Automatons and Self-Drawing Machines](objects/)  
 2025-02-11  
 
