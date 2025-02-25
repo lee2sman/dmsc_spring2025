@@ -245,6 +245,8 @@ class Box {
 
 ## Workshop: Smart robot Alfie
 
+![Alphie the robot](alphie.jpg)  
+
 Alfie is a little robot who needs to pick up all the objects in the room and return them.
 
 Create 5 random round obstructions in the center line of the sketch.
