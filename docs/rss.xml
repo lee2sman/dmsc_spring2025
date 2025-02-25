@@ -14,7 +14,7 @@ https://leetusman.com/dmsc_spring2025/posts/2024-01-28-LOGO.md
 https://leetusman.com/dmsc_spring2025/posts/2024-01-28-LOGO.md
 </guid>
 <pubDate>
-Tue, 18 Feb 2025 00:00:00 -0500
+Tue, 25 Feb 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -42,7 +42,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.md
 https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.md
 </guid>
 <pubDate>
-Tue, 18 Feb 2025 00:00:00 -0500
+Tue, 25 Feb 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -70,7 +70,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-11-objects.md
 https://leetusman.com/dmsc_spring2025/posts/2025-02-11-objects.md
 </guid>
 <pubDate>
-Tue, 18 Feb 2025 00:00:00 -0500
+Tue, 25 Feb 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -98,7 +98,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-17-seeding.md
 https://leetusman.com/dmsc_spring2025/posts/2025-02-17-seeding.md
 </guid>
 <pubDate>
-Tue, 18 Feb 2025 00:00:00 -0500
+Tue, 25 Feb 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -112,6 +112,34 @@ Today
 Visiting artist
 
 Jonah Senzel - Composition, New Media, Interactive Arts
+]]>
+</description>
+</item>
+<item>
+<title>
+Week 5 - Random Robots / Motion with vectors
+</title>
+<link>
+https://leetusman.com/dmsc_spring2025/posts/2025-02-25-robots-painting.md
+</link>
+<guid>
+https://leetusman.com/dmsc_spring2025/posts/2025-02-25-robots-painting.md
+</guid>
+<pubDate>
+Tue, 25 Feb 2025 00:00:00 -0500
+</pubDate>
+<description>
+<![CDATA[
+Today
+
+Vectors and Autonomous objects: drawing, driving, picking things up
+
+-   Log reviews of “daily seeding”
+-   vectors and motion
+-   vector math
+-   objects and pickups
+
+Vectors
 ]]>
 </description>
 </item>

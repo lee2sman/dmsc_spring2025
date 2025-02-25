@@ -1,3 +1,6 @@
+[Week 5 - Random Robots / Motion with vectors](robots-painting/)  
+2025-02-25  
+
 [Week 4 - Random Seeding](seeding/)  
 2025-02-17  
 
