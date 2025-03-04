@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="date" content="" />
+            <title>Week 6 - Cellular Automata and the Game of
+Life</title>
+      <link rel="stylesheet" href="../css/../css/dmsc.css" />
+
+      <meta property="og:title" content="Week 6 - Cellular Automata and
+the Game of Life" />
+                  <meta property="og:type" content="article" />
+  </head>
+  <body>
+      <header> <nav>
+  <ul>
+    <li><a href="https://leetusman.com/dmsc_spring2025/">home</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/about/">about</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/logs/">logs</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/syllabus/">syllabus</a></li>
+  </ul>
+</nav> </footer>
+      <h1>Week 6 - Cellular Automata and the Game of Life</h1>
+            <p><em>Date: 2025-03-05</em></p>
+            <h2 id="today">Today</h2>
+            <ul>
+            <li>Log reviews of “daily seeding”</li>
+            <li>The Game of Life</li>
+            </ul>
+            <h2 id="a-life">A-life</h2>
+            <blockquote>
+            <p>New media art self-consciously reworks technology into
+            culture, and rereads technology as culture. What’s more, it
+            does so in a concrete, applied way; it manipulates the
+            technology itself, with a nonindustrial latitude that admits
+            misapplication and adaptation, rewiring and hacking,
+            pseudofunctionality and accident. <em>p.5,
+            Metacreation</em></p>
+            </blockquote>
+            <blockquote>
+            <p>A-life begins with a notion of life that is wholly
+            materialistic, involving no soul, vital force, or essence.
+            In the words of the convenor of the first artificial life
+            workshop, Christopher Langton, ‘Living organisms are nothing
+            more that complex biochemical machines.’ Langton contends
+            that rather than being any special substance or force, life
+            is ‘a property of the organization of matter.’ Further, this
+            organization is not simply a complex structure but a dynamic
+            structure, a system active in real time: for a-life, life is
+            most importantly manifest in behavior. <em>p.7,
+            Metacreation</em></p>
+            </blockquote>
+            <h3 id="tenets-of-this-approach">Tenets of this
+            approach:</h3>
+            <ul>
+            <li>no central organizer/intelligence</li>
+            <li>bottom-up structure</li>
+            <li>emergence produces lifelike systems</li>
+            <li>as opposed to the study of AI, A-life does not focus on
+            intelligence but on behaviors and is not top-down,
+            procedural</li>
+            </ul>
+            <h3 id="systems">Systems:</h3>
+            <ul>
+            <li>genetic algorithms
+            <ul>
+            <li>separate beings (genotypes) with behaviors
+            (phenotypes)</li>
+            </ul></li>
+            <li>agent-based systems
+            <ul>
+            <li>models individuals in an artifical world</li>
+            </ul></li>
+            <li>cellular automata
+            <ul>
+            <li>an array of individual cells computed with a set of
+            simple rules governing a cell’s future state, as affected by
+            the current state of its neighbor cells</li>
+            </ul></li>
+            </ul>
+            <blockquote>
+            <p>We are no longer creating a work, we are creating
+            creation…We are able to bring forth…results…which go beyond
+            the intentions of their originators, and this in infinite
+            number. – Nicholas Schöffer <em>p.16, Metacreation</em></p>
+            </blockquote>
+            <h3 id="inventing-the-game-of-life">Inventing the Game of
+            Life</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/CgOcEZinQ2I?si=ehwiIGNFEr20iLyP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p>Stephen Hawkings The Meaning of Life (John Conway’s Game
+            of Life segment)</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/R9Plq-D1gEk?si=CWqqyvlNInP593eb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p>Inventing Game of Life (John Conway) - Numberphile</p>
+            <h2 id="cellular-automata-in-p5.js">Cellular Automata in
+            p5.js</h2>
+            <iframe src="https://editor.p5js.org/2sman/full/JWOk0UdFI">
+            </iframe>
+            <p><em>from <a
+            href="https://p5js.org/examples/math-and-physics-game-of-life/">p5.js
+            examples - Game of Life</a></em></p>
+            <h3 id="cellular-automata-in-minecraft">Cellular Automata in
+            Minecraft</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wNypW-aSCmE?si=5EApUlR0_HmKfjG3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <h3 id="multiple-neighborhood-cellular-automata">Multiple
+            Neighborhood Cellular Automata</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5zY7AemnJpM?si=yish1mSzC8M_JLpS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mha8eq2NLo8?si=c3uddAU7rUPE-H0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p><a
+            href="https://softologyblog.wordpress.com/2018/03/31/more-explorations-with-multiple-neighborhood-cellular-automata/">More
+            explorations with Multiple Neighborhoods Cellular
+            Automata</a> by softology</p>
+            <h3
+            id="procedural-level-design-in-brogue-and-beyond">Procedural
+            Level Design in Brogue and Beyond</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Uo9-IcHhq_w?si=GVeWUN_w7VTOJu6f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <h2 id="resources">Resources</h2>
+            <ul>
+            <li><a
+            href="https://tann.fun/article/cellular-automata">cellular
+            automata</a> post by Tann</li>
+            <li><a href="https://www.wolframscience.com/nks/">A New Kind
+            of Science</a> book (online) by Stephen Wolfram</li>
+            <li><a
+            href="https://softologyblog.wordpress.com/2020/03/17/a-new-kind-of-science/">blog
+            post</a> about it by Softology</li>
+            </ul>
+            <h2 id="forces">Forces</h2>
+            <p>Goal: Have a number of objects move independently and
+            respond to environmental forces.</p>
+            <p>A force is a vector that causes an object with mass to
+            accelerate.</p>
+            <h3 id="newtons-3-laws-of-motion">Newton’s 3 Laws of
+            Motion</h3>
+            <ol type="1">
+            <li>An object at rest remains at rest or an object in motion
+            stays in motion at a constant velocity (speed and
+            direction), unless acted upon by a force.</li>
+            <li>Force equals mass times acceleration.</li>
+            <li>For every action there is an equal and opposite
+            reaction. Forces occur in pairs, in equal strength, in
+            opposite directions.</li>
+            </ol>
+            <p><strong>Mass</strong> - measure of matter in an object,
+            (in kilograms)<br />
+            <strong>Weight</strong> - the force of gravity on an object
+            (in newtons)<br />
+            <strong>density</strong> - mass per unit (such as grams per
+            centimeter)</p>
+            <p>In our sketches, <strong>the acceleration of an object is
+            its force</strong>.</p>
+            <p>Pseudocode - concept</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">//</span><span class="al">NOTE</span><span class="co">: this is PSEUDOCODE to understand a concept!</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Mover {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(){</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    vector location<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    vector velocity<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    vector acceleration<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <pre><code>//PSEUDOCODE
+// example applying methods
+
+mover.applyForce(wind);
+mover.applyForce(gravity);
+
+....
+
+//example method code inside a mover class
+
+applyForce(vector force) {
+  acceleration = force;
+}</code></pre>
+            <p>Note: the force really needs to reflect the total of all
+            of the forces acting together: wind, gravity, and anything
+            else. This could change from moment to moment, such as
+            changing wind, so we need to recalculate every draw loop. We
+            can do this by multiplying the acceleration by 0 at the end
+            of a loop.</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">update</span>() {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    velocity<span class="op">.</span><span class="fu">add</span>(acceleration)<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    location<span class="op">.</span><span class="fu">add</span>(velocity)<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    acceleration<span class="op">.</span><span class="fu">mult</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> }</span></code></pre></div>
+            <p>Now, let’s work in actual Javascript/p5.js. Let’s create
+            a mover, and apply a force to it.</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">//modified from Daniel Shiffman&#39;s The Nature of Code</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> m<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">640</span><span class="op">,</span> <span class="dv">360</span>)<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  m <span class="op">=</span> <span class="kw">new</span> <span class="fu">Mover</span>()<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">50</span>)<span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">//change its x value to move to the right</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> wind <span class="op">=</span> <span class="fu">createVector</span>(<span class="fl">0.01</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span> </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  m<span class="op">.</span><span class="fu">applyForce</span>(wind)<span class="op">;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  m<span class="op">.</span><span class="fu">update</span>()<span class="op">;</span> <span class="co">//change position</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  m<span class="op">.</span><span class="fu">display</span>()<span class="op">;</span> <span class="co">//draw to screen</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  m<span class="op">.</span><span class="fu">checkEdges</span>()<span class="op">;</span> <span class="co">//did we run off screen?</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <p>Now that we have the basic code mocked out, we need to
+            build the actual Mover class.</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Mover {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>() {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">mass</span> <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">position</span> <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">30</span><span class="op">,</span> <span class="dv">30</span>)<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span> <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span> <span class="co">//starts at 0 until applied</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span> <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span> <span class="co">//starts at 0 until applied</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">applyForce</span>(force) {</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> f <span class="op">=</span> p5<span class="op">.</span><span class="at">Vector</span><span class="op">.</span><span class="fu">div</span>(force<span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">mass</span>)<span class="op">;</span> [derived](<span class="co">//derived) from Newton&#39;s Second Law</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span><span class="op">.</span><span class="fu">add</span>(f)<span class="op">;</span> <span class="co">//add all the forces together (wind, gravity, etc)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>() {</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span>)<span class="op">;</span>  <span class="co">//acceleration is added to velocity</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">velocity</span>)<span class="op">;</span>  <span class="co">//velocity is added to position to get the next position</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span><span class="op">.</span><span class="fu">mult</span>(<span class="dv">0</span>)<span class="op">;</span> <span class="co">//we reset the force to 0 at end</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">display</span>() {</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stroke</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">strokeWeight</span>(<span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill</span>(<span class="dv">255</span><span class="op">,</span> <span class="dv">127</span>)<span class="op">;</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ellipse</span>(<span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">y</span><span class="op">,</span> <span class="dv">48</span><span class="op">,</span> <span class="dv">48</span>)<span class="op">;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">checkEdges</span>() {</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span> <span class="op">&gt;</span> width) {</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span> <span class="op">=</span> width<span class="op">;</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span><span class="op">.</span><span class="at">x</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span> <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span><span class="op">.</span><span class="at">x</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">y</span> <span class="op">&gt;</span> height) {</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span><span class="op">.</span><span class="at">y</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">y</span> <span class="op">=</span> height<span class="op">;</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <p>Our full <a
+            href="https://editor.p5js.org/2sman/sketches/SJ3EZE-9Q">code
+            example</a>.</p>
+            <p>At this point, we have a single mover. We can create an
+            array of movers, each with their own starting position, and
+            forces acting on them.</p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">//modified from Dan Shiffman Nature of Code</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> movers <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">640</span><span class="op">,</span> <span class="dv">360</span>)<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">20</span><span class="op">;</span> i<span class="op">++</span>) { <span class="co">//initializing an array of 20 movers</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    movers[i] <span class="op">=</span> <span class="kw">new</span> <span class="fu">Mover</span>(<span class="fu">random</span>(<span class="fl">0.1</span><span class="op">,</span> <span class="dv">5</span>)<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">255</span>)<span class="op">;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> movers<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) { <span class="co">//this runs in a loop, so that it affects all movers individually</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> wind <span class="op">=</span> <span class="fu">createVector</span>(<span class="fl">0.01</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> gravity <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    movers[i]<span class="op">.</span><span class="fu">applyForce</span>(wind)<span class="op">;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    movers[i]<span class="op">.</span><span class="fu">applyForce</span>(gravity)<span class="op">;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    movers[i]<span class="op">.</span><span class="fu">update</span>()<span class="op">;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    movers[i]<span class="op">.</span><span class="fu">display</span>()<span class="op">;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    movers[i]<span class="op">.</span><span class="fu">checkEdges</span>()<span class="op">;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <p>Notice the smaller movers are faster. Acceleration is
+            force divided by mass, so larger masses have smaller
+            accelerations.</p>
+            <p>An example with mousePressed to create a wind force on 2
+            movers.</p>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// The Nature of Code</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> moverA<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> moverB<span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">640</span><span class="op">,</span> <span class="dv">360</span>)<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">// A large Mover on the left side of the window</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  moverA <span class="op">=</span> <span class="kw">new</span> <span class="fu">Mover</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">// A smaller Mover on the right side of the window</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  moverB <span class="op">=</span> <span class="kw">new</span> <span class="fu">Mover</span>(<span class="dv">440</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createP</span>(<span class="st">&#39;Click mouse to apply wind force.&#39;</span>)<span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">51</span>)<span class="op">;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> gravity <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> gravityA <span class="op">=</span> p5<span class="op">.</span><span class="at">Vector</span><span class="op">.</span><span class="fu">mult</span>(gravity<span class="op">,</span> moverA<span class="op">.</span><span class="at">mass</span>)<span class="op">;</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  moverA<span class="op">.</span><span class="fu">applyForce</span>(gravityA)<span class="op">;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> gravityB <span class="op">=</span> p5<span class="op">.</span><span class="at">Vector</span><span class="op">.</span><span class="fu">mult</span>(gravity<span class="op">,</span> moverB<span class="op">.</span><span class="at">mass</span>)<span class="op">;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  moverB<span class="op">.</span><span class="fu">applyForce</span>(gravityB)<span class="op">;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mouseIsPressed) {</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> wind <span class="op">=</span> <span class="fu">createVector</span>(<span class="fl">0.1</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    moverA<span class="op">.</span><span class="fu">applyForce</span>(wind)<span class="op">;</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    moverB<span class="op">.</span><span class="fu">applyForce</span>(wind)<span class="op">;</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  moverA<span class="op">.</span><span class="fu">update</span>()<span class="op">;</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  moverA<span class="op">.</span><span class="fu">display</span>()<span class="op">;</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  moverA<span class="op">.</span><span class="fu">checkEdges</span>()<span class="op">;</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  moverB<span class="op">.</span><span class="fu">update</span>()<span class="op">;</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  moverB<span class="op">.</span><span class="fu">display</span>()<span class="op">;</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  moverB<span class="op">.</span><span class="fu">checkEdges</span>()<span class="op">;</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <p><a
+            href="https://editor.p5js.org/2sman/sketches/hEKrAw8rQ">code
+            example</a></p>
+            <p><a
+            href="https://editor.p5js.org/2sman/sketches/g9ewFlXYR">array
+            of movers with forces</a> - code example</p>
+            <h2 id="ecosystem-project">Ecosystem Project</h2>
+            <ul>
+            <li>Read section 2 from <a
+            href="https://natureofcode.com/forces/">The Nature of
+            Code</a> focusing on Air/Fluid Resistance</li>
+            <li>Can you add mud? water? goo? that will slow down and
+            affect your creature?</li>
+            <li>Read section 2.9 on Attraction. This will let us make
+            organisms that move around and follow things, run away from
+            them (or eat them!). Can you add cheese that attracts your
+            mouse? or pheromones that attract a critter? or honey that
+            attracts a bear?</li>
+            <li>See examples 2.5 and 2.6 <a
+            href="https://github.com/nature-of-code/noc-examples-p5.js/tree/master/chp02_forces">here</a>
+            for starter p5.js code adapted from The Nature of Code</li>
+            <li>optional: Watch Dan Shiffman’s <a
+            href="https://www.youtube.com/watch?v=II1A3bBo6gM&amp;list=PLRqwX-V7Uu6ZRrqLcQ5BkBKmBLiGD8n4O">tutorials</a>
+            on forces if you’d like a review or alternate instruction
+            model</li>
+            <li>Your project should consist of at least one Class. Your
+            environment should have forces. This could be gravity, wind.
+            Add an attraction force. Make sure to replace your primitive
+            shapes with images at this point. You should have a metaphor
+            or situation in mind for what you are creating, not just
+            “these circles want to eat these other circles” but a
+            specific system you are trying to build.</li>
+            </ul>
+      <footer> <hr>
+
+<p><em><a href="https://github.com/lee2sman/dmsc_spring2025">This site</a> is built using <a href="https://tildegit.org/exquisitecorp/panblog">panblog</a>. Site design by Lee Tusman (c) 2025.</em></p>
+
+<p><em>All course content, unless otherwise credited, is by Lee Tusman (c) 2025 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA</a>.</em></p> </footer>
+  </body>
+</html>

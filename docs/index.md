@@ -1,3 +1,6 @@
+[Week 6 - Cellular Automata and the Game of Life](game-of-life/)  
+2025-03-05  
+
 [Week 5 - Random Robots / Motion with vectors](robots-painting/)  
 2025-02-25  
 

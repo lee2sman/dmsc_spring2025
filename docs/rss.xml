@@ -14,7 +14,7 @@ https://leetusman.com/dmsc_spring2025/posts/2024-01-28-LOGO.md
 https://leetusman.com/dmsc_spring2025/posts/2024-01-28-LOGO.md
 </guid>
 <pubDate>
-Tue, 25 Feb 2025 00:00:00 -0500
+Tue, 04 Mar 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -42,7 +42,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.md
 https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.md
 </guid>
 <pubDate>
-Tue, 25 Feb 2025 00:00:00 -0500
+Tue, 04 Mar 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -70,7 +70,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-11-objects.md
 https://leetusman.com/dmsc_spring2025/posts/2025-02-11-objects.md
 </guid>
 <pubDate>
-Tue, 25 Feb 2025 00:00:00 -0500
+Tue, 04 Mar 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -98,7 +98,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-17-seeding.md
 https://leetusman.com/dmsc_spring2025/posts/2025-02-17-seeding.md
 </guid>
 <pubDate>
-Tue, 25 Feb 2025 00:00:00 -0500
+Tue, 04 Mar 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -126,7 +126,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-25-robots-painting.md
 https://leetusman.com/dmsc_spring2025/posts/2025-02-25-robots-painting.md
 </guid>
 <pubDate>
-Tue, 25 Feb 2025 00:00:00 -0500
+Tue, 04 Mar 2025 00:00:00 -0500
 </pubDate>
 <description>
 <![CDATA[
@@ -140,6 +140,34 @@ Vectors and Autonomous objects: drawing, driving, picking things up
 -   objects and pickups
 
 Vectors
+]]>
+</description>
+</item>
+<item>
+<title>
+Week 6 - Cellular Automata and the Game of Life
+</title>
+<link>
+https://leetusman.com/dmsc_spring2025/posts/2025-03-05-game-of-life.md
+</link>
+<guid>
+https://leetusman.com/dmsc_spring2025/posts/2025-03-05-game-of-life.md
+</guid>
+<pubDate>
+Tue, 04 Mar 2025 00:00:00 -0500
+</pubDate>
+<description>
+<![CDATA[
+Today
+
+-   Log reviews of “daily seeding”
+-   The Game of Life
+
+A-life
+
+  New media art self-consciously reworks technology into culture, and
+  rereads technology as culture. What’s more, it does so in a concrete,
+  applied way; it manipulates the technology itself, with a
 ]]>
 </description>
 </item>
