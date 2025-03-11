@@ -1,3 +1,6 @@
+[Week 7 - Fluxus and algorithmic art and simulations](fluxus/)  
+2025-03-11  
+
 [Week 6 - Cellular Automata and the Game of Life](game-of-life/)  
 2025-03-05  
 
