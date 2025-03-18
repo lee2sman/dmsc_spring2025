@@ -1,4 +1,4 @@
-[Algorave](algorave/)  
+[Week 8 - Algorave](algorave/)  
 2025-03-18  
 
 [Week 7 - Fluxus and algorithmic art and simulations](fluxus/)  
