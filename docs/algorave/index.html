@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="date" content="" />
+            <title>Algorave</title>
+      <link rel="stylesheet" href="../css/../css/dmsc.css" />
+
+      <meta property="og:title" content="Algorave" />
+                  <meta property="og:type" content="article" />
+  </head>
+  <body>
+      <header> <nav>
+  <ul>
+    <li><a href="https://leetusman.com/dmsc_spring2025/">home</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/about/">about</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/logs/">logs</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/syllabus/">syllabus</a></li>
+  </ul>
+</nav> </footer>
+      <h1>Algorave</h1>
+            <p><em>Date: 2025-03-18</em></p>
+            <p>Today:</p>
+            <ul>
+            <li>Review ecosystems</li>
+            <li>Intro to Algoraves</li>
+            <li>Hydra live coding</li>
+            <li>Jam time</li>
+            <li>P5Live live coding</li>
+            </ul>
+            <h2 id="hydra">Hydra</h2>
+            <p><a href="https://hydra.ojack.xyz">Hydra</a> is by coder
+            and artist Olivia Jack. It’s a livecoding tool for networked
+            visuals. It is influenced by oldschool modular video
+            synthesizers, and has been reimagined as a distributed
+            (multi-computer/multi-person) tool for performance.</p>
+            <p>Rutt-Etra video synthesizer demo - 1974 - <a
+            href="https://www.youtube.com/watch?v=PExbk6RgOo4">video</a></p>
+            <p>It is built in Javascript and can be integrated with
+            other Javascript projects for the web.</p>
+            <blockquote>
+            <p>Built using WebRTC (peer-to-peer web streaming) and
+            WebGL, hydra allows each connected browser/device/person to
+            output a video signal or stream, and receive and modify
+            streams from other browsers/devices/people. The API is
+            inspired by analog modular synthesis, in which multiple
+            visual sources (oscillators, cameras, application windows,
+            other connected windows) can be transformed, modulated, and
+            composited via combining sequences of functions.</p>
+            </blockquote>
+            <h3 id="sites">Sites</h3>
+            <ul>
+            <li><a href="flok.clic.cf">flok</a> for mulitple people on
+            shared screen</li>
+            </ul>
+            <h2 id="opening-hydra">Opening Hydra</h2>
+            <p>Go to <a href="http://hydra.ojack.xyz">Hydra</a>.</p>
+            <p>Close the welcome screen. A random program will be
+            running. Try changing the numbers. Click the shuffle icon in
+            the top right to load a different starting program. Click
+            the dice icon to shuffle numbers (variables) in the current
+            program.</p>
+            <h2
+            id="creating-an-oscillator-connecting-to-output">Creating an
+            Oscillator, Connecting to Output</h2>
+            <p>Erase all the code on your screen.</p>
+            <p>Let’s create an oscillator.</p>
+            <p>The code we are writing are functions. This program is
+            inspired by analog video synthesizers. In a synthesizer you
+            connect a source to an output.</p>
+            <p>In our Hydra code we have to connect our oscillator to an
+            output to see anything.</p>
+            <pre><code>osc().out();</code></pre>
+            <p>Press Control-Enter (might be Command-Enter on Macs?) to
+            run the code.</p>
+            <h2 id="input">Input</h2>
+            <p>We can try entering some numbers as input. These are
+            called parameters.</p>
+            <pre><code>osc(10, 0, 0.9).out();</code></pre>
+            <p>To run our program we press Control-Shift-Enter to run
+            all of our code. If we ever want to run just a single line
+            of code we can press Control-Enter.</p>
+            <p>In an analog synth you can route a signal through various
+            modules until finally plugging into an output. In Hydra, we
+            can add more functions in a chain until connecting to our
+            output. Let’s add a rotate() function.</p>
+            <p>We can also use parameters. The first parameter for
+            rotate is the amount of rotation, and the second number is
+            the speed of rotation.</p>
+            <pre><code>osc(10, 0, 0.9).rotate(0.2, 0.4).out();</code></pre>
+            <h2 id="undo-forward-back">Undo (forward / back)</h2>
+            <p>To undo / go back one step, press your browser’s back
+            button. You can also use the forward button. This is how to
+            navigate back and forth in time in your code.</p>
+            <h2 id="more-functions">More functions</h2>
+            <p>Let’s do a repeat effect.</p>
+            <pre><code>osc(10, 0, 0.9).rotate(0.2, 0.4).repeat().out();</code></pre>
+            <p>By default it repeats the image 3 times in a row. We can
+            enter a parameter to change the amount.</p>
+            <pre><code>osc(10, 0, 0.9).rotate(0.2, 0.4).repeat(2).out();</code></pre>
+            <p>Kaleidoscope</p>
+            <pre><code>osc(10, 0, 0.9).rotate(0.2, 0.4).kaleid().repeat(2).out();</code></pre>
+            <p>Try changing the order of functions.</p>
+            <pre><code>osc(10, 0, 0.9).kaleid().rotate(0.2, 0.4).repeat(2).out();</code></pre>
+            <h2 id="other-sources">Other sources</h2>
+            <p>Oscillator is a source. We can start with other
+            sources.</p>
+            <p>For example, we can start with a shape.</p>
+            <pre><code>shape().out();</code></pre>
+            <p>By default, shape is a triangle with 3 sides.</p>
+            <pre><code>shape(5).out();</code></pre>
+            <p>A pentagon. The parameter specifies number of side.s</p>
+            <p>We can add many more to get something like a circle.</p>
+            <pre><code>shape(50).out();</code></pre>
+            <p>Another source is a solid color.</p>
+            <pre><code>solid(2, 3).out();</code></pre>
+            <h2 id="list-of-functions">List of functions</h2>
+            <p>To find out about more possible sources and other
+            functions, you can click the ? (question) icon in the top
+            right of Hydra, and then scroll down the intro and click to
+            <a href="https://ojack.xyz/hydra-functions/">a list of hydra
+            functions</a>. You may want to open in a new window.</p>
+            <p>At the top of that page are possible sources. The first
+            listed one is noise.</p>
+            <pre><code>noise().out();</code></pre>
+            <p>We can enter 1 parameter for how noisy it is. This noise
+            is the Perlin noise we’ve been using in p5.js as well.</p>
+            <pre><code>noise(3).out();</code></pre>
+            <p>A second parameter is the rate of change.</p>
+            <pre><code>noise(3, 8).out();</code></pre>
+            <p>Voronoi pattern is another source. This is a new noise
+            source for us.</p>
+            <pre><code>voronoi(7, 1).out();</code></pre>
+            <p>These can all be combined with the functions we covered
+            earlier like repeat(), kaleid(), color(), rotate().</p>
+            <pre><code>voronoi(3, 1).color(1, -1).out();</code></pre>
+            <h2 id="differences-from-p5.js">Differences from p5.js</h2>
+            <p>Unlike p5.js, you can run a single line. If you press
+            Control-Enter, it will run just the line you’re on.</p>
+            <h3 id="using-a-website-or-screen-as-input">Using a website
+            or screen as input</h3>
+            <pre><code>s0.initScreen()
+
+src(s0).hue().out()</code></pre>
+            <h3 id="resources">Resources</h3>
+            <ul>
+            <li><a
+            href="https://www.youtube.com/watch?list=PLrpQhDxe6xjQIHyvRc1H1__opbgDOdusK&amp;v=7KwFchuio6U&amp;feature=emb_logo">Video
+            playlist</a> of Intro to Hydra with Olivia Jack, creator of
+            Hydra</li>
+            <li><a
+            href="https://github.com/ojack/hydra#Getting-Started">Getting
+            Started</a></li>
+            <li><a
+            href="https://github.com/ojack/hydra/blob/main/examples/README.md">Hydra
+            examples and info</a></li>
+            <li><a href="https://hydra-book.naotohieda.com/#/">Hydra
+            book</a> by Naoto Hieda</li>
+            <li>Collaboratively livecode in Hydra together in <a
+            href="http://pixeljam.glitch.me/">PixelJam</a></li>
+            </ul>
+            <h1 id="homework">Homework</h1>
+            <h3 id="read">Read</h3>
+            <ul>
+            <li>Read The Guy Behind Garbage Pail Kids Has Been
+            Cartooning With Code for 20 Years - <a
+            href="https://www.wired.com/2014/08/code-cartooning/">article</a>
+            in Wired</li>
+            </ul>
+            <h3 id="code">Code</h3>
+            <ul>
+            <li>Practice with Hydra</li>
+            <li>Make sure you also try using different forms of input (a
+            web browser window, your entire computer, or a specific
+            image as input)</li>
+            </ul>
+            <h3 id="write-a-devlog-post">Write a devlog post</h3>
+            <ul>
+            <li>Take screenshots of at least two different
+            visualizations you create in Hydra and p5live. Write about
+            the experience of using them. What kinds of things are you
+            making? Is the language intuitive? What are your thoughts on
+            Hydra versus p5.js? What kinds of work can you make with
+            Hydra?</li>
+            </ul>
+      <footer> <hr>
+
+<p><em><a href="https://github.com/lee2sman/dmsc_spring2025">This site</a> is built using <a href="https://tildegit.org/exquisitecorp/panblog">panblog</a>. Site design by Lee Tusman (c) 2025.</em></p>
+
+<p><em>All course content, unless otherwise credited, is by Lee Tusman (c) 2025 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA</a>.</em></p> </footer>
+  </body>
+</html>
