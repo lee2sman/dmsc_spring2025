@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="date" content="" />
+            <title>Week 8 - Musical Pattern Languages</title>
+      <link rel="stylesheet" href="../css/../css/dmsc.css" />
+
+      <meta property="og:title" content="Week 8 - Musical Pattern
+Languages" />
+                  <meta property="og:type" content="article" />
+  </head>
+  <body>
+      <header> <nav>
+  <ul>
+    <li><a href="https://leetusman.com/dmsc_spring2025/">home</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/about/">about</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/logs/">logs</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/syllabus/">syllabus</a></li>
+  </ul>
+</nav> </footer>
+      <h1>Week 8 - Musical Pattern Languages</h1>
+            <p><em>Date: 2025-04-07</em></p>
+            <p>Today:</p>
+            <ul>
+            <li>Strudel live coding</li>
+            <li>Jam time</li>
+            </ul>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hc-lcAajQxo?si=-RaM-WvahOuDiLvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/lxQgBeLQBgk?si=V9APdT2rLAutYwM_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <h2 id="strudel">Strudel</h2>
+            <p>Strudel is a live coding language to write musical
+            patterns pieces. It is dynamic: you can change or add code
+            and execute the changes in music live instantly. What does
+            it mean that Strudel is used to write musical
+            <em>patterns</em>? If you have previous experience working
+            in music hardware, you can consider Strudel to be like a
+            <em>sequencer.</em> It is typical to start with minimal code
+            and make a simple loop that over time you morph, add new
+            beats, instruments or additional sequences.</p>
+            <p>Strudel (Javascript), and its sibling languages Tidal
+            (Haskell) and Vortex (Python), are used in algorave
+            algorithmic music performance, often alongside live coded
+            visuals in other languages. Strudel is based on the original
+            language TidalCycles (also known as Tidal), implemented in
+            Javascript, whereas Tidal was written in the language
+            Haskell. Consider this similarity to how p5.js is a
+            Javascript implementation of the Processing functionality
+            that was written in Java.</p>
+            <p>Strudel is open source, created by Felix Roos and Alex
+            McLean with many other contributors, and is based on the
+            work of TidalCycles, created by Alex McLean.</p>
+            <h3 id="introduction-to-strudel">Introduction to
+            Strudel</h3>
+            <p><em>Credits: This tutorial section includes code and
+            descriptions adapted from <a
+            href="https://www.hellocatfood.com/">Antonio Roberts</a>’s
+            Make Music Through Code Using Strudel.</em></p>
+            <p>Visit the <a href="https://strudel.cc/">Strudel REPL</a>
+            to get started. You can try playing the pattern there, or
+            hit shuffle (button in top right) to try another one
+            out.</p>
+            <p>Instead of clicking the play button you can press
+            Control-Enter to play your current code. Alternatively, it
+            may be Command-Enter on your computer if you have Mac?</p>
+            <p>A REPL stands for Read-Evaluate-Print-Loop. A command
+            line shell is in a REPL. Here, the REPL allows us to read
+            our code, evaluate (run it), print (aka play it), and then
+            loop - start again.</p>
+            <h2 id="building-patterns">Building patterns</h2>
+            <p>The basic building block in Strudel is the pattern. A
+            pattern is a series of events over a timespan.</p>
+            <p>Let’s build up some basic sounds. Start by removing all
+            the starter code in Strudel so you have an empty editor.</p>
+            <pre><code>sound(&quot;bd&quot;)</code></pre>
+            <p>Enter the code and press Control-Enter to run it. It will
+            play the bd (<strong>bass drum</strong>) sound, then loop
+            back to start and begin playing it again.</p>
+            <p>A shortcut: <strong>you can write <code>s()</code>
+            instead of <code>sound()</code></strong>.</p>
+            <p>So the above could also be written
+            <code>s("bd")</code>.</p>
+            <pre><code>sound(&quot;bd bd bd bd&quot;)</code></pre>
+            <p>What happens if you repeat the bass drum 4 times? (Hit
+            Control-Enter to run it.)</p>
+            <pre><code>sound(&quot;bd bd [bd bd] bd&quot;)</code></pre>
+            <p>Notice that with the square brackets the bass drum is
+            played twice on the third step.</p>
+            <pre><code>sound(&quot;bd hh [cp cp] bd&quot;)</code></pre>
+            <p>Now let’s try some other samples. cp is
+            <strong>clap</strong> and hh is <strong>hi hat</strong>.</p>
+            <figure>
+            <img src="../images/drumset.png"
+            alt="drumset, from Strudel, original image by pbroks13" />
+            <figcaption aria-hidden="true">drumset, from Strudel,
+            original image by <a
+            href="https://de.wikipedia.org/wiki/Schlagzeug#/media/Datei:Drum_set.svg">pbroks13</a></figcaption>
+            </figure>
+            <h2 id="other-built-in-samples">Other built-in samples</h2>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Drum</th>
+            <th>Abbreviation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Bass drum</td>
+            <td>bd</td>
+            </tr>
+            <tr class="even">
+            <td>Snare drum</td>
+            <td>sd</td>
+            </tr>
+            <tr class="odd">
+            <td>Rimshot</td>
+            <td>rim</td>
+            </tr>
+            <tr class="even">
+            <td>Clap</td>
+            <td>cp</td>
+            </tr>
+            <tr class="odd">
+            <td>Close hihat</td>
+            <td>hh</td>
+            </tr>
+            <tr class="even">
+            <td>Open hi-hat</td>
+            <td>oh</td>
+            </tr>
+            <tr class="odd">
+            <td>Crash</td>
+            <td>cr</td>
+            </tr>
+            <tr class="even">
+            <td>Ride</td>
+            <td>rd</td>
+            </tr>
+            <tr class="odd">
+            <td>High tom</td>
+            <td>ht</td>
+            </tr>
+            <tr class="even">
+            <td>Medium tom</td>
+            <td>mt</td>
+            </tr>
+            <tr class="odd">
+            <td>Low tom</td>
+            <td>lt</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Try some of those out.</p>
+            <pre><code>sound(&quot;bd hh [cp cp] bd&quot;).slow(2)</code></pre>
+            <p>We can chain the sound function to the slow() function to
+            alter the speed of playback. Here our pattern will start
+            playing back at half the speed.</p>
+            <pre><code>sound(&quot;bd hh [cp cp] bd&quot;).fast(2)</code></pre>
+            <p>We can also play twice as fast with the fast()
+            function.</p>
+            <pre><code>x=&gt;x</code></pre>
+            <p>We use the <code>x=&gt;x</code> function before any
+            function that will modify a following pattern.</p>
+            <pre><code>sound(&quot;bd hh [cp cp] bd&quot;).lastOf(4, x=&gt;x.fast(2))</code></pre>
+            <p>For example, by chaining to the lastOf() function, we can
+            specify that every 4th iteration the pattern should run
+            twice as fast.</p>
+            <pre><code>sound(&quot;bd hh [cp cp] bd&quot;).lastOf(4, x=&gt;x.rev())</code></pre>
+            <p>You can also run your pattern backwards with the function
+            rev(). Here we run the pattern back every 4 iterations.</p>
+            <pre><code>sound(&quot;bd hh [cp cp] bd&quot;).speed(0.5).lastOf(4, x=&gt;x.rev())</code></pre>
+            <p>Change pitch with the speed() function. 0.5 is half speed
+            for example.</p>
+            <h2 id="other-samples-to-try">Other samples to try</h2>
+            <p>Check out the <a
+            href="https://github.com/tidalcycles/Dirt-Samples">Dirt-Samples
+            repo</a>. Each of the directories is a sample set you can
+            run.</p>
+            <h3 id="add-samples">Add samples</h3>
+            <pre><code>samples(&#39;github:tidalcycles/Dirt-Samples/master/&#39;)</code></pre>
+            <p>Run this to add a large library of sound samples.</p>
+            <pre><code>sound(&quot;bd hh [cp cp] bd&quot;).bank(&quot;RolandTR808&quot;).bank(&quot;RolandTR808&quot;)</code></pre>
+            <p>Change sound bank. Also try the following banks. These
+            are just a few:</p>
+            <ul>
+            <li>AkaiLinn</li>
+            <li>RhythmAce</li>
+            <li>RolandTR808</li>
+            <li>RolandTR707</li>
+            <li>ViscoSpaceDrum</li>
+            </ul>
+            <p><a href="https://strudel.cc/learn/samples/">Additional
+            info on Samples and Sound banks</a></p>
+            <pre><code>samples(&#39;github:tidalcycles/Dirt-Samples/&#39;)
+sound(&quot;breaks125&quot;).slice(8, &quot;1 1 2 3 [4 0] 5 6 7&quot;)</code></pre>
+            <p>slice chops a sample into specified number of slices,
+            which you can then play in a pattern. In the above example,
+            breaks165 sample is chopped into 8 slices, and then played
+            starting at 0. Try changing out breaks165 for breaks125.</p>
+            <pre><code>sound(&quot;bd bd hh bd&quot;).degradeBy(0.5)</code></pre>
+            <p>degradeBy is the chance that a step in the pattern is
+            skipped. In the above pattern each step has a 50% chance of
+            being skipped.</p>
+            <pre><code>sound(&quot;bd cp bd hh&quot;).sometimesBy(0.5, x=&gt;x.speed(0.5))</code></pre>
+            <p>sometimesBy randomly applies a function to a pattern with
+            the percentage chance specified.</p>
+            <p>Check out the strudel <a
+            href="https://strudel.cc/workshop/getting-started">docs</a></p>
+            <p>For next steps, I recommend checking out <a
+            href="https://strudel.cc/workshop/first-notes/">First
+            notes</a> and <a
+            href="https://strudel.cc/workshop/first-effects/">First
+            effects</a>.</p>
+            <h2 id="resources">Resources</h2>
+            <ul>
+            <li><a
+            href="https://strudel.cc/workshop/getting-started/">Getting
+            Started with Strudel</a></li>
+            <li><a
+            href="https://www.youtube.com/@Eulerroom">Eulerroom</a>
+            recordings of live coding streamed live on YouTube</li>
+            <li><a href="https://strudel.cc/learn/hydra/">Integrating
+            Hydra with Strudel</a> to do audio visualizations.</li>
+            </ul>
+            <h2
+            id="live-coding-collaboration-in-the-browser-with-flok">Live
+            coding collaboration in the browser with Flok</h2>
+            <p><a href="https://flok.cc">Flok</a> is a browser-based
+            environment for collaborative live coding of sound and
+            image. It allows mulitple people to work in the same virtual
+            space. You can start up Strudel, Hydra and other live coding
+            languages simultaneously. It supports a <a
+            href="https://github.com/munshkr/flok?tab=readme-ov-file#features">large
+            number of live coding languages and plugins</a>. Flok is <a
+            href="https://github.com/munshkr/flok">open source
+            software</a> by Damián Silvani and additional
+            contributors.</p>
+            <ul>
+            <li><p>alt/option enter - Evaluate all</p></li>
+            <li><p>ctrl/cmd enter - Evaluate block, Evaluate
+            selection</p></li>
+            <li><p><a
+            href="https://github.com/munshkr/flok?tab=readme-ov-file#keybindings">list
+            of keyboard shortcuts (keybindings)</a></p></li>
+            </ul>
+            <h1 id="homework">Homework</h1>
+            <p>Partner with someone from class. Practice a set
+            performing together. It usually makes sense to have one
+            person perform music while the other performs visual live
+            coding, but it is okay to deviate from this.</p>
+            <p>Come up with your performance names (or ‘band’ name).
+            Develop some little code snippets you can use and
+            understand. Practice a short set. Can you build from a
+            minimal start, adding complexity, changing patterns, and
+            building to a climax, before winding down?</p>
+      <footer> <hr>
+
+<p><em><a href="https://github.com/lee2sman/dmsc_spring2025">This site</a> is built using <a href="https://tildegit.org/exquisitecorp/panblog">panblog</a>. Site design by Lee Tusman (c) 2025.</em></p>
+
+<p><em>All course content, unless otherwise credited, is by Lee Tusman (c) 2025 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA</a>.</em></p> </footer>
+  </body>
+</html>

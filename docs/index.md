@@ -1,3 +1,6 @@
+[Week 8 - Musical Pattern Languages](music-pattern-language/)  
+2025-04-07  
+
 [Week 8 - Algorave](algorave/)  
 2025-03-18  
 

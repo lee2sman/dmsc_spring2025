@@ -14,7 +14,7 @@ https://leetusman.com/dmsc_spring2025/posts/2024-01-28-LOGO.html
 https://leetusman.com/dmsc_spring2025/posts/2024-01-28-LOGO.html
 </guid>
 <pubDate>
-Tue, 18 Mar 2025 00:00:00 -0400
+Tue, 08 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -42,7 +42,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.html
 https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.html
 </guid>
 <pubDate>
-Tue, 18 Mar 2025 00:00:00 -0400
+Tue, 08 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -70,7 +70,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-11-objects.html
 https://leetusman.com/dmsc_spring2025/posts/2025-02-11-objects.html
 </guid>
 <pubDate>
-Tue, 18 Mar 2025 00:00:00 -0400
+Tue, 08 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -98,7 +98,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-17-seeding.html
 https://leetusman.com/dmsc_spring2025/posts/2025-02-17-seeding.html
 </guid>
 <pubDate>
-Tue, 18 Mar 2025 00:00:00 -0400
+Tue, 08 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -126,7 +126,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-25-robots-painting.html
 https://leetusman.com/dmsc_spring2025/posts/2025-02-25-robots-painting.html
 </guid>
 <pubDate>
-Tue, 18 Mar 2025 00:00:00 -0400
+Tue, 08 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -154,7 +154,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-03-05-game-of-life.html
 https://leetusman.com/dmsc_spring2025/posts/2025-03-05-game-of-life.html
 </guid>
 <pubDate>
-Tue, 18 Mar 2025 00:00:00 -0400
+Tue, 08 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -182,7 +182,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-03-11-fluxus.html
 https://leetusman.com/dmsc_spring2025/posts/2025-03-11-fluxus.html
 </guid>
 <pubDate>
-Tue, 18 Mar 2025 00:00:00 -0400
+Tue, 08 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -210,7 +210,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-03-18-algorave.html
 https://leetusman.com/dmsc_spring2025/posts/2025-03-18-algorave.html
 </guid>
 <pubDate>
-Tue, 18 Mar 2025 00:00:00 -0400
+Tue, 08 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -223,6 +223,34 @@ Today:
 -   P5Live live coding
 
 Hydra
+]]>
+</description>
+</item>
+<item>
+<title>
+Week 8 - Musical Pattern Languages
+</title>
+<link>
+https://leetusman.com/dmsc_spring2025/posts/2025-04-07-music-pattern-language.html
+</link>
+<guid>
+https://leetusman.com/dmsc_spring2025/posts/2025-04-07-music-pattern-language.html
+</guid>
+<pubDate>
+Tue, 08 Apr 2025 00:00:00 -0400
+</pubDate>
+<description>
+<![CDATA[
+Today:
+
+-   Strudel live coding
+-   Jam time
+
+Strudel
+
+Strudel is a live coding language to write musical patterns pieces. It
+is dynamic: you can change or add code and execute the changes in music
+live instantly. What does it mean that Strudel is used to write musical
 ]]>
 </description>
 </item>
