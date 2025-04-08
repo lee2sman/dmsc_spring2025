@@ -1,4 +1,4 @@
-[Week 8 - Musical Pattern Languages](music-pattern-language/)  
+[Week 10 - Strudel Musical Pattern Language](music-pattern-language/)  
 2025-04-07  
 
 [Week 8 - Algorave](algorave/)  
