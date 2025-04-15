@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="date" content="" />
+            <title>Week 11 - Particle Systems and Squirrel Eat
+Squirrel</title>
+      <link rel="stylesheet" href="../css/../css/dmsc.css" />
+
+      <meta property="og:title" content="Week 11 - Particle Systems and
+Squirrel Eat Squirrel" />
+                  <meta property="og:type" content="article" />
+  </head>
+  <body>
+      <header> <nav>
+  <ul>
+    <li><a href="https://leetusman.com/dmsc_spring2025/">home</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/about/">about</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/logs/">logs</a></li>
+    <li><a href="https://leetusman.com/dmsc_spring2025/syllabus/">syllabus</a></li>
+  </ul>
+</nav> </footer>
+      <h1>Week 11 - Particle Systems and Squirrel Eat Squirrel</h1>
+            <p><em>Date: 2025-04-15</em></p>
+            <p>today:</p>
+            <ul>
+            <li>little performances
+            <ul>
+            <li>when should we perform?</li>
+            </ul></li>
+            <li>coding challenge: squirrel eat squirrel</li>
+            <li>particle systems</li>
+            </ul>
+            <h3 id="coding-challenge-squirrel-eat-squirrel">Coding
+            Challenge: Squirrel Eat Squirrel</h3>
+            <figure>
+            <img src="../images/squirrel.webp"
+            alt="squirrel eat squirrel" />
+            <figcaption aria-hidden="true">squirrel eat
+            squirrel</figcaption>
+            </figure>
+            <p>Squirrel Eat Squirrel is a game by programmer Al
+            Sweigart.</p>
+            <blockquote>
+            <p>Squirrel Eat Squirrel is loosely based on the game
+            <em>Katamari Damacy</em>. The player controls a small
+            squirrel that must hop around the screen eating smaller
+            squirrels and avoiding larger squirrels. Each time the
+            player’s squirrel eats a squirrel that is smaller than it,
+            it grows larger. If the player’s squirrel gets hit by a
+            larger squirrel larger than it, it loses a life point. The
+            player wins when the squirrel becomes a monstrously large
+            squirrel called the Omega Squirrel. The player loses if
+            their squirrel gets hit three times.</p>
+            </blockquote>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xB1sLRfcWj4?si=tHU3SFdmBmQBxP86" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p>Images: some <a
+            href="https://opengameart.org/content/squirrels">squirrels</a>
+            from <a href="https://opengameart.org/">Open Game
+            Art</a></p>
+            <h2 id="particle-systems">Particle systems</h2>
+            <p><em>Credit: This section contains code from Chapter 4 in
+            The Nature of Code, Daniel Shiffman</em></p>
+            <p>First we set up a system of particles</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">//from The Nature Of Code, Daniel Shiffman</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> system<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">640</span><span class="op">,</span> <span class="dv">360</span>)<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  system <span class="op">=</span> <span class="kw">new</span> <span class="fu">ParticleSystem</span>()<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">255</span>)<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  system<span class="op">.</span><span class="fu">run</span>()<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <p>Now we need to set up the class for the particleSystem.
+            First we need a class for an individual particle. We can
+            re-use our Mover class code from earlier in the
+            semester.</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">//from The Nature of Code, Daniel Shiffman</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Particle {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// A Particle object is just another name for a mover. It has position, velocity, and acceleration.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(x<span class="op">,</span> y) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">position</span> <span class="op">=</span> <span class="fu">createVector</span>(x<span class="op">,</span> y)<span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span> <span class="op">=</span> <span class="fu">createVector</span>()<span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span> <span class="op">=</span> <span class="fu">createVector</span>()<span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>() {</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span>)<span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">velocity</span>)<span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span><span class="op">.</span><span class="fu">mult</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">show</span>() {</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stroke</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill</span>(<span class="dv">175</span>)<span class="op">;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">circle</span>(<span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">y</span><span class="op">,</span> <span class="dv">8</span>)<span class="op">;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <p>Next we add the single variable lifespan to our
+            class.</p>
+            <pre><code>//from The Nature of Code, by Daniel Shiffman
+class Particle {
+  constructor(x, y) {
+    this.position = createVector(x, y);
+    this.acceleration = createVector();
+    this.velocity = createVector();
+    // A new variable to keep track of how long the particle has been “alive.” It starts at 255 and counts down to 0.
+    this.lifespan = 255;
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    // Life span decreases.
+    this.lifespan -= 2.0;
+  }
+
+  show() {
+    // Since the life ranges from 255 to 0, it can also be used for alpha.
+    stroke(0, this.lifespan);
+    fill(175, this.lifespan);
+    circle(this.position.x, this.position.y, 8);
+  }
+}</code></pre>
+            <p>Next we add in a way to test if the particle is alive or
+            dead. We do this through testing its lifespan.</p>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">//from The Nature of Code, Daniel Shiffman</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">isDead</span>() {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Is the particle still alive?</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span> <span class="op">&lt;</span> <span class="fl">0.0</span>) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
+            <p>a simpler way of writing this:</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">//from The Nature of Code, Daniel Shiffman</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">isDead</span>() {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Is the particle still alive?</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> (<span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span> <span class="op">&lt;</span> <span class="fl">0.0</span>)<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div>
+            <h3 id="a-single-particle">A single particle</h3>
+            <p><a
+            href="https://editor.p5js.org/2sman/sketches/H__EGmona">link
+            to code</a></p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">//from The Nature of Code, Daniel Shiffman</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> particle<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">640</span><span class="op">,</span> <span class="dv">360</span>)<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  particle <span class="op">=</span> <span class="kw">new</span> <span class="fu">Particle</span>(width <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">20</span>)<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">255</span>)<span class="op">;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Operate the single particle.</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  particle<span class="op">.</span><span class="fu">update</span>()<span class="op">;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  particle<span class="op">.</span><span class="fu">show</span>()<span class="op">;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Apply a gravity force.</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> gravity <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  particle<span class="op">.</span><span class="fu">applyForce</span>(gravity)<span class="op">;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Check the particle’s state and make a new particle.</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (particle<span class="op">.</span><span class="fu">isDead</span>()) {</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    particle <span class="op">=</span> <span class="kw">new</span> <span class="fu">Particle</span>(width <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">20</span>)<span class="op">;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Particle dead!&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Particle {</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(x<span class="op">,</span>y) {</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">position</span> <span class="op">=</span>  <span class="fu">createVector</span>(x<span class="op">,</span> y)<span class="op">;</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">//{!1} For demonstration purposes, the particle has a random velocity.</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span> <span class="op">=</span> <span class="fu">createVector</span>(<span class="fu">random</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">,</span> <span class="fu">random</span>(<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">0</span>))<span class="op">;</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span> <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span> <span class="op">=</span> <span class="fl">255.0</span><span class="op">;</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>() {</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span>)<span class="op">;</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">velocity</span>)<span class="op">;</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span> <span class="op">-=</span> <span class="fl">2.0</span><span class="op">;</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span><span class="op">.</span><span class="fu">mult</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">show</span>() {</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stroke</span>(<span class="dv">0</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span>)<span class="op">;</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill</span>(<span class="dv">0</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span>)<span class="op">;</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">circle</span>(<span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">y</span><span class="op">,</span> <span class="dv">8</span>)<span class="op">;</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Keep the same physics model as in previous chapters.</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">applyForce</span>(force) {</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span><span class="op">.</span><span class="fu">add</span>(force)<span class="op">;</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Is the particle alive or dead?</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">isDead</span>() {</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span> <span class="op">&lt;</span> <span class="fl">0.0</span>)<span class="op">;</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <p>Technically, when the particle “dies” it gets
+            overwritten.</p>
+            <p>Next, we’ll build an array of particles. In our draw, we
+            need to loop through our array and remove any particles that
+            are dead. We can’t do this in a regular forward for-loop
+            because we’ll get strange errors while iterating through an
+            array while removing elements. Instead, we loop through
+            backwards.</p>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">//from The Nature of Code, Daniel Shiffman</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">//{!1} Loop through the list backward.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> particles<span class="op">.</span><span class="at">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">--</span>) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> particle <span class="op">=</span> particles[i]<span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    particle<span class="op">.</span><span class="fu">run</span>()<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (particle<span class="op">.</span><span class="fu">isDead</span>()) {</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      particles<span class="op">.</span><span class="fu">splice</span>(i<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
+            <p><a
+            href="https://editor.p5js.org/2sman/sketches/mwHcivj4y">link
+            to code</a></p>
+            <div class="sourceCode" id="cb8"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">//modified from The Nature of Code, Daniel Shiffman</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> particles <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">640</span><span class="op">,</span> <span class="dv">240</span>)<span class="op">;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">255</span>)<span class="op">;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  particles<span class="op">.</span><span class="fu">push</span>(<span class="kw">new</span> <span class="fu">Particle</span>(width <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">20</span>))<span class="op">;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">//{!1} Loop through the array backward for deletion.</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> particles<span class="op">.</span><span class="at">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">--</span>) {</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> particle <span class="op">=</span> particles[i]<span class="op">;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>   <span class="co">// particle.run();</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>      particle<span class="op">.</span><span class="fu">update</span>()<span class="op">;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>      particle<span class="op">.</span><span class="fu">show</span>()<span class="op">;</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> gravity <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  particle<span class="op">.</span><span class="fu">applyForce</span>(gravity)<span class="op">;</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (particle<span class="op">.</span><span class="fu">isDead</span>()) {</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>      particles<span class="op">.</span><span class="fu">splice</span>(i<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Particle {</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(x<span class="op">,</span>y) {</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">position</span> <span class="op">=</span>  <span class="fu">createVector</span>(x<span class="op">,</span> y)<span class="op">;</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">//{!1} For demonstration purposes, the particle has a random velocity.</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span> <span class="op">=</span> <span class="fu">createVector</span>(<span class="fu">random</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">,</span> <span class="fu">random</span>(<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">0</span>))<span class="op">;</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span> <span class="op">=</span> <span class="fu">createVector</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span> <span class="op">=</span> <span class="fl">255.0</span><span class="op">;</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>() {</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velocity</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span>)<span class="op">;</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">velocity</span>)<span class="op">;</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span> <span class="op">-=</span> <span class="fl">2.0</span><span class="op">;</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span><span class="op">.</span><span class="fu">mult</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">show</span>() {</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stroke</span>(<span class="dv">0</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span>)<span class="op">;</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill</span>(<span class="dv">0</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span>)<span class="op">;</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">circle</span>(<span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">y</span><span class="op">,</span> <span class="dv">8</span>)<span class="op">;</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Keep the same physics model as in previous chapters.</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">applyForce</span>(force) {</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">acceleration</span><span class="op">.</span><span class="fu">add</span>(force)<span class="op">;</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Is the particle alive or dead?</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">isDead</span>() {</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="kw">this</span><span class="op">.</span><span class="at">lifespan</span> <span class="op">&lt;</span> <span class="fl">0.0</span>)<span class="op">;</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <h3 id="snowflakes">Snowflakes</h3>
+            <div class="sourceCode" id="cb9"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">//from p5.js documentation https://p5js.org/examples/classes-and-objects-snowflakes/</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Define array to hold snowflake objects</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> snowflakes <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">400</span><span class="op">,</span> <span class="dv">600</span>)<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">angleMode</span>(DEGREES)<span class="op">;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Create snowflake objects</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">300</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Add a new snowflake object to the array</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    snowflakes<span class="op">.</span><span class="fu">push</span>(<span class="kw">new</span> <span class="fu">Snowflake</span>())<span class="op">;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Update and display each snowflake in the array</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> currentTime <span class="op">=</span> frameCount <span class="op">/</span> <span class="dv">60</span><span class="op">;</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> flake <span class="kw">of</span> snowflakes) {</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Update each snowflake position and display</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    flake<span class="op">.</span><span class="fu">update</span>(currentTime)<span class="op">;</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    flake<span class="op">.</span><span class="fu">display</span>()<span class="op">;</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="co">// Define the snowflake class</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Snowflake {</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>() {</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">posX</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">posY</span> <span class="op">=</span> <span class="fu">random</span>(<span class="op">-</span>height<span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">initialAngle</span> <span class="op">=</span> <span class="fu">random</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">360</span>)<span class="op">;</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">size</span> <span class="op">=</span> <span class="fu">random</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">5</span>)<span class="op">;</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">radius</span> <span class="op">=</span> <span class="fu">sqrt</span>(<span class="fu">random</span>(<span class="fu">pow</span>(width <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>)))<span class="op">;</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> <span class="fu">color</span>(<span class="fu">random</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">256</span>)<span class="op">,</span> <span class="fu">random</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">256</span>)<span class="op">,</span> <span class="fu">random</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">256</span>))<span class="op">;</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>(time) {</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Define angular speed (degrees / second)</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> angularSpeed <span class="op">=</span> <span class="dv">35</span><span class="op">;</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Calculate the current angle</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> angle <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">initialAngle</span> <span class="op">+</span> angularSpeed <span class="op">*</span> time<span class="op">;</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    <span class="co">// x position follows a sine wave</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">posX</span> <span class="op">=</span> width <span class="op">/</span> <span class="dv">2</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">radius</span> <span class="op">*</span> <span class="fu">sin</span>(angle)<span class="op">;</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Different size snowflakes fall at different y speeds</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> ySpeed <span class="op">=</span> <span class="dv">8</span> <span class="op">/</span> <span class="kw">this</span><span class="op">.</span><span class="at">size</span><span class="op">;</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">posY</span> <span class="op">+=</span> ySpeed<span class="op">;</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    <span class="co">// When snowflake reaches the bottom, move it to the top</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">posY</span> <span class="op">&gt;</span> height) {</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">posY</span> <span class="op">=</span> <span class="op">-</span><span class="dv">50</span><span class="op">;</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">display</span>() {</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill</span>(<span class="kw">this</span><span class="op">.</span><span class="at">color</span>)<span class="op">;</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">noStroke</span>()<span class="op">;</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ellipse</span>(<span class="kw">this</span><span class="op">.</span><span class="at">posX</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">posY</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">size</span>)<span class="op">;</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+            <h2 id="homework">Homework</h2>
+            <p>Squirrel Eat Squirrel</p>
+            <p>Basic Requirements:</p>
+            <ul class="task-list">
+            <li><label><input type="checkbox" />game works in fullscreen
+            mode</label></li>
+            <li><label><input type="checkbox" />a player’s squirrel.
+            controlled by up, down, left, right arrow</label></li>
+            <li><label><input type="checkbox" />Procedurally generated
+            ‘squirrels’</label></li>
+            <li><label><input type="checkbox" />classes for the Player
+            and squirrels</label></li>
+            <li><label><input type="checkbox" />when an enemy squirrel
+            collides with another squirrel the big one eats the smaller
+            one and grows bigger</label></li>
+            <li><label><input type="checkbox" />if the player hits a
+            larger squirrel, lose a life point and grow
+            smaller</label></li>
+            <li><label><input type="checkbox" />if player hits a larger
+            squirrel three times, game over</label></li>
+            </ul>
+            <p>Advanced:</p>
+            <ul class="task-list">
+            <li><label><input type="checkbox" />add a class for grass
+            and procedurally generate grass around the level. <em>Grass
+            is like a squirrel that doesn’t move!</em></label></li>
+            <li><label><input type="checkbox" />balance the variables so
+            the game gets to a compelling level of difficulty (the
+            ‘goldilocks’ amount)</label></li>
+            <li><label><input type="checkbox" />better ‘walking’
+            pattern. hop? perlin noise?</label></li>
+            <li><label><input type="checkbox" />eating
+            sounds</label></li>
+            <li><label><input type="checkbox" />procedurally generated
+            flowers</label></li>
+            <li><label><input type="checkbox" />what else?</label></li>
+            </ul>
+            <p>DOUBLE BONUS POINTS:</p>
+            <ul class="task-list">
+            <li><label><input type="checkbox" />self-playing version
+            (‘player’ moves itself without player), possibly through
+            Perlin noise</label></li>
+            </ul>
+            <h3 id="reading-and-write">Reading and Write</h3>
+            <p>Read <a
+            href="https://natureofcode.com/particles/">Chapter 4</a>
+            from The Nature of Code (partially a review of things from
+            today, and partly new material on inheritance and
+            polymorphism)</p>
+            <p>Read <a
+            href="https://www.crummy.com/writing/speaking/2014-Foolscap/">Writing
+            Aliens OR Duchamp, Markov, Queneau: A Mostly Delightful
+            Quilt</a> - 1 hour</p>
+            <p>Finish Squirrel Eat Squirrel</p>
+      <footer> <hr>
+
+<p><em><a href="https://github.com/lee2sman/dmsc_spring2025">This site</a> is built using <a href="https://tildegit.org/exquisitecorp/panblog">panblog</a>. Site design by Lee Tusman (c) 2025.</em></p>
+
+<p><em>All course content, unless otherwise credited, is by Lee Tusman (c) 2025 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA</a>.</em></p> </footer>
+  </body>
+</html>

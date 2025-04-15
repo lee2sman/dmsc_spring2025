@@ -1,3 +1,6 @@
+[Week 11 - Particle Systems and Squirrel Eat Squirrel](particle-systems/)  
+2025-04-15  
+
 [Week 10 - Strudel Musical Pattern Language](music-pattern-language/)  
 2025-04-07  
 
