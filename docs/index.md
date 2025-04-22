@@ -1,3 +1,6 @@
+[Week 12 - Procedural Text Generation](procedural-generation/)  
+2025-04-22  
+
 [Week 11 - Particle Systems and Squirrel Eat Squirrel](particle-systems/)  
 2025-04-15  
 

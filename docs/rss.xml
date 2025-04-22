@@ -14,7 +14,7 @@ https://leetusman.com/dmsc_spring2025/posts/2024-01-28-LOGO.html
 https://leetusman.com/dmsc_spring2025/posts/2024-01-28-LOGO.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -42,7 +42,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.html
 https://leetusman.com/dmsc_spring2025/posts/2025-02-04-iceberg-walk.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -70,7 +70,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-11-objects.html
 https://leetusman.com/dmsc_spring2025/posts/2025-02-11-objects.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -98,7 +98,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-17-seeding.html
 https://leetusman.com/dmsc_spring2025/posts/2025-02-17-seeding.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -126,7 +126,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-02-25-robots-painting.html
 https://leetusman.com/dmsc_spring2025/posts/2025-02-25-robots-painting.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -154,7 +154,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-03-05-game-of-life.html
 https://leetusman.com/dmsc_spring2025/posts/2025-03-05-game-of-life.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -182,7 +182,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-03-11-fluxus.html
 https://leetusman.com/dmsc_spring2025/posts/2025-03-11-fluxus.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -210,7 +210,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-03-18-algorave.html
 https://leetusman.com/dmsc_spring2025/posts/2025-03-18-algorave.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -237,7 +237,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-04-07-music-pattern-language.ht
 https://leetusman.com/dmsc_spring2025/posts/2025-04-07-music-pattern-language.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -265,7 +265,7 @@ https://leetusman.com/dmsc_spring2025/posts/2025-04-15-particle-systems.html
 https://leetusman.com/dmsc_spring2025/posts/2025-04-15-particle-systems.html
 </guid>
 <pubDate>
-Tue, 15 Apr 2025 00:00:00 -0400
+Tue, 22 Apr 2025 00:00:00 -0400
 </pubDate>
 <description>
 <![CDATA[
@@ -279,6 +279,34 @@ today:
 Coding Challenge: Squirrel Eat Squirrel
 
 [squirrel eat squirrel]
+]]>
+</description>
+</item>
+<item>
+<title>
+Week 12 - Procedural Text Generation
+</title>
+<link>
+https://leetusman.com/dmsc_spring2025/posts/2025-04-22-procedural-generation.html
+</link>
+<guid>
+https://leetusman.com/dmsc_spring2025/posts/2025-04-22-procedural-generation.html
+</guid>
+<pubDate>
+Tue, 22 Apr 2025 00:00:00 -0400
+</pubDate>
+<description>
+<![CDATA[
+-   Markov
+-   5 Card Nancy
+-   Generative text grammars
+-   Tracery
+-   Generative dungeons?
+
+Markov
+
+  In the hands of metereologists, ecologists, computer scientists,
+  financial engineers and other people who need to model big phenomena,
 ]]>
 </description>
 </item>
