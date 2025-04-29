@@ -1,3 +1,6 @@
+[Week 13 - Studio time](studio-time/)  
+2025-04-29  
+
 [Week 12 - Procedural Text Generation](procedural-generation/)  
 2025-04-22  
 
